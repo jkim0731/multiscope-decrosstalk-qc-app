@@ -41,7 +41,7 @@ python -m decrosstalk_qc.app --assets NAME1 NAME2   # specific processed asset n
 python -m decrosstalk_qc.app --assets-file list.txt # one processed asset name per line
 python -m decrosstalk_qc.app --exemplars           # the 3 built-in Phase-1 exemplars
 # choose the labeler name and where labels are saved (also editable in the app):
-python -m decrosstalk_qc.app --labeler jinho --labels-path /scratch/labels.csv
+python -m decrosstalk_qc.app --labeler <labeler_name> --labels-path /scratch/labels.csv
 ```
 
 The console entry point `multiscope-decrosstalk-qc` is equivalent to
