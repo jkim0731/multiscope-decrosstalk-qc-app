@@ -1,0 +1,15 @@
+# Runtime dependencies (mirror of pyproject [project].dependencies).
+# In a Code Ocean capsule, PyQt5 is usually provided by conda (pyqt=5) -- install the rest
+# from here and this package with --no-deps to avoid a pip/conda Qt conflict.
+numpy
+pandas
+scipy
+scikit-image
+h5py
+matplotlib
+PyQt5
+pyqtgraph
+fsspec
+s3fs
+# optional, only for S3 / non-attached asset lookup:
+# aind-session

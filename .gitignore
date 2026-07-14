@@ -1,0 +1,21 @@
+# Byte-compiled / optimized
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Packaging / build
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Caches / scratch (the app redirects temp+cache to /scratch at import)
+.cache/
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store

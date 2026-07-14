@@ -1,0 +1,44 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "multiscope-decrosstalk-qc-app"
+version = "0.1.0"
+description = "Interactive Qt visual-QC app and metrics for multiplane-ophys (mesoscope) decrosstalk outputs."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { file = "LICENSE" }
+authors = [{ name = "Jinho Kim", email = "jinho.kim@alleninstitute.org" }]
+keywords = ["ophys", "mesoscope", "decrosstalk", "quality-control", "Qt"]
+
+# Runtime dependencies. NB: in a Code Ocean capsule the environment usually provides
+# PyQt5 via conda/mamba (pyqt=5); when installing there, use `pip install --no-deps` for
+# this package and install the rest explicitly (see the companion capsule repo) to avoid
+# pip pulling a conflicting PyQt5 wheel over the conda Qt.
+dependencies = [
+    "numpy",
+    "pandas",
+    "scipy",
+    "scikit-image",
+    "h5py",
+    "matplotlib",
+    "PyQt5",
+    "pyqtgraph",
+    "fsspec",
+    "s3fs",
+]
+
+[project.optional-dependencies]
+# Only needed to resolve NON-attached assets from S3 / the Code Ocean data catalog.
+# Attached assets under /root/capsule/data need nothing extra.
+remote = ["aind-session"]
+
+[project.scripts]
+multiscope-decrosstalk-qc = "decrosstalk_qc.app.main:main"
+
+[project.urls]
+Homepage = "https://github.com/jkim0731/multiscope-decrosstalk-qc-app"
+
+[tool.setuptools.packages.find]
+include = ["decrosstalk_qc*"]
